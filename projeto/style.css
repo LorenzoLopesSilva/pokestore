@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25&display=swap");
+@font-face {
+  font-family: "pokemon";
+  src: url("../assets/PokemonSolid.ttf");
+}
+* {
+  margin: 0;
+}
+.cabeca {
+  background-color: #8f0000;
+  height: 50px;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.titulo-principal {
+  font-family: pokemon;
+}
+.lista-nav {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.lista-nav li {
+  display: inline;
+  margin: 0 10px;
+}
+.lista-nav a {
+  text-decoration: none;
+  color: aliceblue;
+  font-family: "Jersey 25";
+  font-size: 20px;
+}
+.pokebola-img {
+  height: 40px;
+  border-radius: 100px;
+}
+
+.conteudo-pricipal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-principal {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+
+}
+.card-principal img {
+  height: 350px;
+  border-radius: 30px;
+}
+.carrossel{
+  display: flex;
+  justify-content: center;
+  background-color: #8f0000;
+  padding: 20px;
+}
+.carrossel-imagens{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.carrossel-img{
+  height: 200px;
+  border-radius: 20px;
+}
