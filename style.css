@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jersey+25&display=swap");
 @font-face {
   font-family: "pokemon";
-  src: url("../assets/PokemonSolid.ttf");
+  src: url("assets/PokemonSolid.ttf");
 }
 * {
   margin: 0;
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
 }
 .titulo-principal {
   font-family: pokemon;
@@ -51,7 +51,7 @@
 
 }
 .card-principal img {
-  height: 350px;
+  width: 40%;
   border-radius: 30px;
 }
 .carrossel{
@@ -66,7 +66,22 @@
   width: 80%;
 }
 
+.carrossel-card{
+  color: aliceblue;
+  width: 15%;
+  font-family: "Jersey 25";
+  /* background-color: rgb(114, 0, 0); */
+  padding: 1%;
+  border-radius: 2px 2px 20px 20px;
+  border: solid 2px rgb(116, 0, 0);
+}
+
+.carrossel-card:hover{
+  margin-top: 10px;
+}
+
 .carrossel-img{
-  height: 200px;
-  border-radius: 20px;
+  width: 100%;
+  border-radius: 2px 2px 20px 20px;
+
 }
