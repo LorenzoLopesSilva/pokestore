@@ -31,7 +31,6 @@ window.addEventListener("DOMContentLoaded", () => {
   if (produtoInfo) {
     let produto = JSON.parse(produtoInfo);
     let carrinhoProduto = document.querySelector(".carrinho-produto");
-    let carrinhoVazio = document.querySelector(".carrinho-vazio");
 
     if (carrinhoProduto) {
       carrinhoProduto.innerHTML = `
@@ -51,12 +50,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function finalizar() {
   let confirmacao = confirm("Deseja confirmar a compra?");
+  let carrinhoProduto = document.querySelector(".carrinho-produto");
+  let conteudoPrincipal = document.querySelector(".conteudo-principal")
   if (confirmacao) {
     alert("Compra efetuada com sucesso!");
     window.localStorage.href = "../index.html";
+    carrinhoProduto.parentNode.removeChild(carrinhoProduto);
+    conteudoPrincipal.innerHTML = `
+        <div class="carrinho-produto">
+            <p class="carrinho-vazio">Carrinho Vazio</p>
+        </div>
+    `
+
+    sessionStorage.clear()
   }
 }
 
 function entrar() {
   window.location.href = "../index.html";
 }
+
+
