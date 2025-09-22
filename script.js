@@ -1,47 +1,40 @@
+let botoes = document.querySelectorAll(".produtos-botao");
+let paginaAtual = window.location.href;
 
-let botoes = document.querySelectorAll('.produtos-botao')
-let paginaAtual = window.location.href
+botoes.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    let container = event.target.closest(".produtos-card");
 
+    let tituloProduto = container.querySelector(".produtos-titulo").textContent;
+    let precoProduto = container.querySelector(".produtos-preco").textContent;
+    let imagemProduto = container.querySelector(".produtos-img").src;
 
+    let produto = {
+      titulo: tituloProduto,
+      preco: precoProduto,
+      imagem: imagemProduto,
+    };
 
+    sessionStorage.setItem("produtoSelecionado", JSON.stringify(produto));
+    alert(`${tituloProduto} adicionado ao carrinho`);
+    if (paginaAtual.includes("produtos")) {
+      window.location.href = "carrinho.html";
+    } else {
+      window.location.href = "./paginas/carrinho.html";
+    }
+  });
+});
 
-botoes.forEach(button => {
-    button.addEventListener('click', (event) => {
-        let container = event.target.closest('.produtos-card')
+window.addEventListener("DOMContentLoaded", () => {
+  let produtoInfo = sessionStorage.getItem("produtoSelecionado");
 
-        let tituloProduto = container.querySelector('.produtos-titulo').textContent
-        let precoProduto = container.querySelector('.produtos-preco').textContent
-        let imagemProduto = container.querySelector('.produtos-img').src
+  if (produtoInfo) {
+    let produto = JSON.parse(produtoInfo);
+    let carrinhoProduto = document.querySelector(".carrinho-produto");
+    let carrinhoVazio = document.querySelector(".carrinho-vazio");
 
-        let produto = {
-            titulo: tituloProduto,
-            preco: precoProduto,
-            imagem: imagemProduto
-        }
-
-        sessionStorage.setItem('produtoSelecionado', JSON.stringify(produto))
-        alert(`${tituloProduto} adicionado ao carrinho`)
-        if (paginaAtual.includes("produtos")) {
-            window.location.href = 'carrinho.html'
-        }
-        else {
-            window.location.href = './paginas/carrinho.html'
-        }    
-
-    })
-})
-
-
-window.addEventListener('DOMContentLoaded', () => {
-    let produtoInfo = sessionStorage.getItem('produtoSelecionado')
-
-    if (produtoInfo) {
-        let produto = JSON.parse(produtoInfo)
-        let carrinhoProduto = document.querySelector('.carrinho-produto')
-        let carrinhoVazio = document.querySelector('.carrinho-vazio')
-
-        if (carrinhoProduto) {
-            carrinhoProduto.innerHTML = `
+    if (carrinhoProduto) {
+      carrinhoProduto.innerHTML = `
                 <img src="${produto.imagem}" alt="">
                 <div class="carrinho-conteudo">
                 <div>
@@ -51,24 +44,19 @@ window.addEventListener('DOMContentLoaded', () => {
                 <button onclick="finalizar()">Finalizar Compra</button>
                 </div>
 
-            `
-        }
+            `;
     }
-})
+  }
+});
 
-function finalizar(){
-    let confirmacao = confirm("Deseja confirmar a compra?")
-    if(confirmacao){
-        alert("Compra efetuada com sucesso!")
-        carrinhoProduto.replaceWith = `
-            <h3>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h3>
-        `
-    }
+function finalizar() {
+  let confirmacao = confirm("Deseja confirmar a compra?");
+  if (confirmacao) {
+    alert("Compra efetuada com sucesso!");
+    window.localStorage.href = "../index.html";
+  }
 }
 
-// let btn_finalizar = document.getElementsByClassName('botao-finalizar')
-
-// btn_finalizar.addEventListener('click', () =>{
-//     alert("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-//     confirm("Deseja finalizar a compra?")
-// })
+function entrar() {
+  window.location.href = "../index.html";
+}
