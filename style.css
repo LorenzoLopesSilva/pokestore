@@ -6,6 +6,7 @@
 :root{
   --cor-principal: #8f0000;
   --secundario: #cb0000;
+  --terciario: #680000;
 }
 * {
   margin: 0;
@@ -55,6 +56,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .card-principal {
@@ -219,4 +221,97 @@
   }
   .login a:hover{
     color: var(--secundario);
+  }
+
+  /* ------------------------------------Produtos------------------------------------- */
+
+  .produtos-titulo{
+    margin: 1% 0 5% 0; 
+  }
+
+  .produtos-linha {
+    display: flex;
+    justify-content: space-around;
+    margin: 2%;
+    width: 90%;
+    margin: 5% auto;
+  }
+  .produtos-card{
+    background-color: var(--cor-principal);
+    width: 20%;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: black 0px 0 10px;
+  }
+  .produtos-card img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .produtos-card button{
+    width: 100%;
+    padding: 2% 0;
+    border: 2px solid var(--cor-principal);
+    border-radius: 0 0 10px 10px;
+  }
+
+  .produtos-card button:hover{
+    background-color:#680000;
+    color: aliceblue;
+  }
+  .produtos-card-conteudo{
+    margin: 5%;
+  }
+
+
+  /* -----------------------Carrinho---------------------- */
+ 
+  .carrinho-titulo{
+    text-align: center;
+    margin: 40px;
+    font-size: 60px;
+  }
+  .carrinho-produto{
+    background-color:#680000 ;
+    padding: 1%;
+    width: 70%;
+    margin: 5% auto;
+    display: flex;
+    align-items: center;
+    border: solid 2px var(--terciario);
+    border-radius: 30px;
+
+  }
+
+  .carrinho-produto img{
+    width: 50%;
+    border-radius: 30px 0 0 30px;
+  }
+  .carrinho-conteudo{
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10%;
+    color: aliceblue;
+
+
+  }
+  .carrinho-conteudo div{
+    font-size: x-large;
+
+  }
+  .carrinho-produto button{
+    margin-top: 10;
+    width: 50%;
+    padding: 3%;
+    border-radius: 15px;
+  }
+  .carrinho-produto button:hover{
+    background-color: var(--cor-principal);
+    border: none;
+    color: aliceblue;
   }
